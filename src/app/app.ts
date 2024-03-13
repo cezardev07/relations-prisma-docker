@@ -4,17 +4,14 @@ import router from "../routes/router"
 
 export default class App{
   public app: Express
-  // private publicDirectoryPath: string
   constructor(){
     this.app = express()
     this.midlewares()
-    // this.publicDirectoryPath = process.cwd() + "/view"
   }
   private midlewares(){
     this.app.use(cors())
     this.app.use(express.json())
     this.app.use("/", router)
-    // this.app.use(express.static(this.publicDirectoryPath))
   }
   public serve({port,message}:{
     port: string | number,
