@@ -19,7 +19,7 @@ npx prisma db push
 ```
 
 ```bash
-yarn start or npm start
+yarn dev or npm run dev
 ```
 
 
