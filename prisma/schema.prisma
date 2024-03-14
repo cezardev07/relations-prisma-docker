@@ -24,9 +24,9 @@ model User{
 }
 
 model Cart {
-  id        String @id @default(uuid())
-  product   String
-  user      User @relation(fields: [user_id], references: [id])
+  id        String  @id @default(uuid())
+  product   String  @unique
+  user      User    @relation(fields: [user_id], references: [id])
   user_id  String
 
   createdAt  DateTime @default(now())
