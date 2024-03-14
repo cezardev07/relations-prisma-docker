@@ -13,11 +13,12 @@ export default class App{
     this.app.use(express.json())
     this.app.use("/", router)
   }
-  public serve({port,message}:{
-    port: string | number,
+  public serve({port,message,host}:{
+    port: number,
+    host: string,
     message?: string
   }){
-    this.app.listen(port, () => {
+    this.app.listen(port, host,() => {
       if(!message?.trim()) {
         return console.log(`serve is running port: ${port}`)
       }
